@@ -1,0 +1,662 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+</head>
+
+<body>
+<p>&lt;!DOCTYPE html&gt;<br />
+  &lt;html lang=&quot;zh-CN&quot;&gt;<br />
+  &lt;head&gt;<br />
+  &lt;meta charset=&quot;UTF-8&quot;&gt;<br />
+  &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;<br />
+  &lt;title&gt;高祖俊的个人网站&lt;/title&gt;<br />
+  &lt;script src=&quot;https://cdn.tailwindcss.com&quot;&gt;&lt;/script&gt;<br />
+  &lt;link href=&quot;https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css&quot; rel=&quot;stylesheet&quot;&gt;<br />
+  &lt;script&gt;<br />
+  tailwind.config = {<br />
+  theme: {<br />
+  extend: {<br />
+  colors: {<br />
+  primary: '#165DFF',<br />
+  secondary: '#FF7D00',<br />
+  dark: '#1D2129',<br />
+  light: '#F2F3F5'<br />
+  },<br />
+  fontFamily: {<br />
+  inter: ['Inter', 'system-ui', 'sans-serif'],<br />
+  },<br />
+  }<br />
+  }<br />
+  }<br />
+  &lt;/script&gt;<br />
+  &lt;style type=&quot;text/tailwindcss&quot;&gt;<br />
+  @layer utilities {<br />
+  .content-auto {<br />
+  content-visibility: auto;<br />
+  }<br />
+  .text-shadow {<br />
+  text-shadow: 0 2px 4px rgba(0,0,0,0.1);<br />
+  }<br />
+  .transition-custom {<br />
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);<br />
+  }<br />
+  .hover-scale {<br />
+  transition: transform 0.3s ease;<br />
+  }<br />
+  .hover-scale:hover {<br />
+  transform: scale(1.03);<br />
+  }<br />
+  }<br />
+  &lt;/style&gt;<br />
+  &lt;/head&gt;<br />
+  &lt;body class=&quot;font-inter bg-gray-50 min-h-screen flex flex-col&quot;&gt;<br />
+  &lt;!-- 登录页面 --&gt;<br />
+  &lt;div id=&quot;login-page&quot; class=&quot;min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 to-indigo-100&quot;&gt;<br />
+  &lt;div class=&quot;w-full max-w-md p-8 bg-white rounded-2xl shadow-xl transform transition-all duration-500 hover:shadow-2xl&quot;&gt;<br />
+  &lt;div class=&quot;text-center mb-8&quot;&gt;<br />
+  &lt;div class=&quot;w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4&quot;&gt;<br />
+  &lt;i class=&quot;fa fa-user-circle-o text-4xl text-primary&quot;&gt;&lt;/i&gt;<br />
+  &lt;/div&gt;<br />
+  &lt;h2 class=&quot;text-[clamp(1.5rem,3vw,2rem)] font-bold text-dark&quot;&gt;个人网站登录&lt;/h2&gt;<br />
+  &lt;p class=&quot;text-gray-500 mt-2&quot;&gt;请输入账号和密码访问&lt;/p&gt;<br />
+  &lt;/div&gt;<br />
+  &lt;form id=&quot;login-form&quot; class=&quot;space-y-5&quot;&gt;<br />
+  &lt;div&gt;<br />
+  &lt;label for=&quot;username&quot; class=&quot;block text-sm font-medium text-gray-700 mb-1&quot;&gt;账号&lt;/label&gt;<br />
+  &lt;div class=&quot;relative&quot;&gt;<br />
+  &lt;span class=&quot;absolute inset-y-0 left-0 flex items-center pl-3 text-gray-500&quot;&gt;<br />
+  &lt;i class=&quot;fa fa-user&quot;&gt;&lt;/i&gt;<br />
+  &lt;/span&gt;<br />
+  &lt;input type=&quot;text&quot; id=&quot;username&quot; name=&quot;username&quot; placeholder=&quot;请输入账号&quot; class=&quot;w-full pl-10 pr-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary/50 focus:border-primary outline-none transition-all&quot; required&gt;<br />
+  &lt;/div&gt;<br />
+  &lt;/div&gt;<br />
+  &lt;div&gt;<br />
+  &lt;label for=&quot;password&quot; class=&quot;block text-sm font-medium text-gray-700 mb-1&quot;&gt;密码&lt;/label&gt;<br />
+  &lt;div class=&quot;relative&quot;&gt;<br />
+  &lt;span class=&quot;absolute inset-y-0 left-0 flex items-center pl-3 text-gray-500&quot;&gt;<br />
+  &lt;i class=&quot;fa fa-lock&quot;&gt;&lt;/i&gt;<br />
+  &lt;/span&gt;<br />
+  &lt;input type=&quot;password&quot; id=&quot;password&quot; name=&quot;password&quot; placeholder=&quot;请输入密码&quot; class=&quot;w-full pl-10 pr-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary/50 focus:border-primary outline-none transition-all&quot; required&gt;<br />
+  &lt;/div&gt;<br />
+  &lt;/div&gt;<br />
+  &lt;button type=&quot;submit&quot; class=&quot;w-full bg-primary hover:bg-primary/90 text-white font-medium py-3 px-4 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-0.5 flex items-center justify-center&quot;&gt;<br />
+  &lt;span&gt;登录&lt;/span&gt;<br />
+  &lt;i class=&quot;fa fa-arrow-right ml-2&quot;&gt;&lt;/i&gt;<br />
+  &lt;/button&gt;<br />
+  &lt;/form&gt;<br />
+  &lt;div class=&quot;mt-6 text-center text-gray-500 text-sm&quot;&gt;<br />
+  &lt;p&gt;© 2025 高祖俊的个人网站&lt;/p&gt;<br />
+  &lt;/div&gt;<br />
+  &lt;/div&gt;<br />
+  &lt;/div&gt;</p>
+<p> &lt;!-- 主页面 --&gt;<br />
+  &lt;div id=&quot;main-page&quot; class=&quot;hidden flex flex-col min-h-screen&quot;&gt;<br />
+  &lt;!-- 导航栏 --&gt;<br />
+  &lt;header class=&quot;bg-primary text-white shadow-md fixed w-full z-50 transition-all duration-300&quot;&gt;<br />
+  &lt;div class=&quot;container mx-auto px-4 sm:px-6 lg:px-8&quot;&gt;<br />
+  &lt;div class=&quot;flex justify-between items-center h-16&quot;&gt;<br />
+  &lt;div class=&quot;flex items-center&quot;&gt;<br />
+  &lt;i class=&quot;fa fa-user-circle-o text-2xl mr-2&quot;&gt;&lt;/i&gt;<br />
+  &lt;span class=&quot;font-bold text-xl&quot;&gt;高祖俊的个人网站&lt;/span&gt;<br />
+  &lt;/div&gt;<br />
+  &lt;nav class=&quot;hidden md:flex space-x-8&quot;&gt;<br />
+  &lt;a href=&quot;#about&quot; class=&quot;text-white hover:text-gray-200 transition-colors font-medium&quot;&gt;关于我&lt;/a&gt;<br />
+  &lt;a href=&quot;#education&quot; class=&quot;text-white hover:text-gray-200 transition-colors font-medium&quot;&gt;教育背景&lt;/a&gt;<br />
+  &lt;a href=&quot;#hobbies&quot; class=&quot;text-white hover:text-gray-200 transition-colors font-medium&quot;&gt;兴趣爱好&lt;/a&gt;<br />
+  &lt;a href=&quot;#contact&quot; class=&quot;text-white hover:text-gray-200 transition-colors font-medium&quot;&gt;联系方式&lt;/a&gt;<br />
+  &lt;/nav&gt;<br />
+  &lt;button id=&quot;logout-btn&quot; class=&quot;bg-white/20 hover:bg-white/30 text-white px-4 py-2 rounded-lg transition-all flex items-center&quot;&gt;<br />
+  &lt;i class=&quot;fa fa-sign-out mr-2&quot;&gt;&lt;/i&gt;<br />
+  &lt;span&gt;退出登录&lt;/span&gt;<br />
+  &lt;/button&gt;<br />
+  &lt;button id=&quot;mobile-menu-btn&quot; class=&quot;md:hidden text-white focus:outline-none&quot;&gt;<br />
+  &lt;i class=&quot;fa fa-bars text-xl&quot;&gt;&lt;/i&gt;<br />
+  &lt;/button&gt;<br />
+  &lt;/div&gt;<br />
+  &lt;/div&gt;<br />
+  &lt;!-- 移动端菜单 --&gt;<br />
+  &lt;div id=&quot;mobile-menu&quot; class=&quot;hidden md:hidden bg-primary/95 backdrop-blur-sm shadow-lg&quot;&gt;<br />
+  &lt;div class=&quot;px-2 pt-2 pb-3 space-y-1 sm:px-3&quot;&gt;<br />
+  &lt;a href=&quot;#about&quot; class=&quot;block px-3 py-2 rounded-md text-white font-medium hover:bg-white/10&quot;&gt;关于我&lt;/a&gt;<br />
+  &lt;a href=&quot;#education&quot; class=&quot;block px-3 py-2 rounded-md text-white font-medium hover:bg-white/10&quot;&gt;教育背景&lt;/a&gt;<br />
+  &lt;a href=&quot;#hobbies&quot; class=&quot;block px-3 py-2 rounded-md text-white font-medium hover:bg-white/10&quot;&gt;兴趣爱好&lt;/a&gt;<br />
+  &lt;a href=&quot;#contact&quot; class=&quot;block px-3 py-2 rounded-md text-white font-medium hover:bg-white/10&quot;&gt;联系方式&lt;/a&gt;<br />
+  &lt;/div&gt;<br />
+  &lt;/div&gt;<br />
+  &lt;/header&gt;</p>
+<p> &lt;!-- 主内容 --&gt;<br />
+  &lt;main class=&quot;flex-grow pt-16&quot;&gt;<br />
+  &lt;!-- 英雄区域 --&gt;<br />
+  &lt;section class=&quot;bg-gradient-to-br from-primary to-indigo-600 text-white py-20 md:py-32&quot;&gt;<br />
+  &lt;div class=&quot;container mx-auto px-4 sm:px-6 lg:px-8&quot;&gt;<br />
+  &lt;div class=&quot;flex flex-col md:flex-row items-center&quot;&gt;<br />
+  &lt;div class=&quot;md:w-1/2 mb-10 md:mb-0&quot;&gt;<br />
+  &lt;h1 class=&quot;text-[clamp(2rem,5vw,3.5rem)] font-bold leading-tight text-shadow mb-4&quot;&gt;<br />
+  你好，我是&lt;span class=&quot;text-secondary&quot;&gt;高祖俊&lt;/span&gt;<br />
+  &lt;/h1&gt;<br />
+  &lt;p class=&quot;text-[clamp(1rem,2vw,1.25rem)] text-gray-100 mb-8 max-w-lg&quot;&gt;<br />
+  五邑大学通信工程专业大三学生，热爱技术与生活，不断探索与成长。<br />
+  &lt;/p&gt;<br />
+  &lt;div class=&quot;flex flex-wrap gap-4&quot;&gt;<br />
+  &lt;a href=&quot;#contact&quot; class=&quot;bg-white text-primary hover:bg-gray-100 font-medium py-3 px-6 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-0.5 flex items-center&quot;&gt;<br />
+  &lt;i class=&quot;fa fa-handshake-o mr-2&quot;&gt;&lt;/i&gt;<br />
+  联系我<br />
+  &lt;/a&gt;<br />
+  &lt;a href=&quot;#hobbies&quot; class=&quot;bg-secondary text-white hover:bg-secondary/90 font-medium py-3 px-6 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-0.5 flex items-center&quot;&gt;<br />
+  &lt;i class=&quot;fa fa-heart mr-2&quot;&gt;&lt;/i&gt;<br />
+  了解我的爱好<br />
+  &lt;/a&gt;<br />
+  &lt;/div&gt;<br />
+  &lt;/div&gt;<br />
+  &lt;div class=&quot;md:w-1/2 flex justify-center&quot;&gt;<br />
+  &lt;div class=&quot;relative w-64 h-64 md:w-80 md:h-80&quot;&gt;<br />
+  &lt;div class=&quot;absolute inset-0 bg-secondary/20 rounded-full animate-pulse&quot;&gt;&lt;/div&gt;<br />
+  &lt;div class=&quot;relative w-full h-full rounded-full overflow-hidden border-4 border-white shadow-2xl&quot;&gt;<br />
+  &lt;img src=&quot;https://picsum.photos/seed/gaozj/400/400&quot; alt=&quot;高祖俊的照片&quot; class=&quot;w-full h-full object-cover&quot;&gt;<br />
+  &lt;/div&gt;<br />
+  &lt;/div&gt;<br />
+  &lt;/div&gt;<br />
+  &lt;/div&gt;<br />
+  &lt;/div&gt;<br />
+  &lt;/section&gt;</p>
+<p> &lt;!-- 关于我 --&gt;<br />
+  &lt;section id=&quot;about&quot; class=&quot;py-16 bg-white&quot;&gt;<br />
+  &lt;div class=&quot;container mx-auto px-4 sm:px-6 lg:px-8&quot;&gt;<br />
+  &lt;div class=&quot;text-center mb-12&quot;&gt;<br />
+  &lt;h2 class=&quot;text-[clamp(1.75rem,4vw,2.5rem)] font-bold text-dark mb-4&quot;&gt;关于我&lt;/h2&gt;<br />
+  &lt;div class=&quot;w-20 h-1 bg-primary mx-auto rounded-full&quot;&gt;&lt;/div&gt;<br />
+  &lt;/div&gt;<br />
+  &lt;div class=&quot;grid grid-cols-1 md:grid-cols-3 gap-8&quot;&gt;<br />
+  &lt;div class=&quot;bg-gray-50 p-8 rounded-xl shadow-md hover-scale&quot;&gt;<br />
+  &lt;div class=&quot;w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-6 mx-auto&quot;&gt;<br />
+  &lt;i class=&quot;fa fa-user text-2xl text-primary&quot;&gt;&lt;/i&gt;<br />
+  &lt;/div&gt;<br />
+  &lt;h3 class=&quot;text-xl font-bold text-center mb-4&quot;&gt;个人信息&lt;/h3&gt;<br />
+  &lt;ul class=&quot;space-y-3 text-gray-700&quot;&gt;<br />
+  &lt;li class=&quot;flex items-center&quot;&gt;<br />
+  &lt;i class=&quot;fa fa-id-card text-primary mr-3 w-5&quot;&gt;&lt;/i&gt;<br />
+  &lt;span&gt;姓名: 高祖俊&lt;/span&gt;<br />
+  &lt;/li&gt;<br />
+  &lt;li class=&quot;flex items-center&quot;&gt;<br />
+  &lt;i class=&quot;fa fa-birthday-cake text-primary mr-3 w-5&quot;&gt;&lt;/i&gt;<br />
+  &lt;span&gt;年龄: 24岁&lt;/span&gt;<br />
+  &lt;/li&gt;<br />
+  &lt;li class=&quot;flex items-center&quot;&gt;<br />
+  &lt;i class=&quot;fa fa-map-marker text-primary mr-3 w-5&quot;&gt;&lt;/i&gt;<br />
+  &lt;span&gt;籍贯: 广东深圳&lt;/span&gt;<br />
+  &lt;/li&gt;<br />
+  &lt;li class=&quot;flex items-center&quot;&gt;<br />
+  &lt;i class=&quot;fa fa-graduation-cap text-primary mr-3 w-5&quot;&gt;&lt;/i&gt;<br />
+  &lt;span&gt;专业: 通信工程&lt;/span&gt;<br />
+  &lt;/li&gt;<br />
+  &lt;/ul&gt;<br />
+  &lt;/div&gt;<br />
+  &lt;div class=&quot;bg-gray-50 p-8 rounded-xl shadow-md hover-scale&quot;&gt;<br />
+  &lt;div class=&quot;w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-6 mx-auto&quot;&gt;<br />
+  &lt;i class=&quot;fa fa-university text-2xl text-primary&quot;&gt;&lt;/i&gt;<br />
+  &lt;/div&gt;<br />
+  &lt;h3 class=&quot;text-xl font-bold text-center mb-4&quot;&gt;学校信息&lt;/h3&gt;<br />
+  &lt;ul class=&quot;space-y-3 text-gray-700&quot;&gt;<br />
+  &lt;li class=&quot;flex items-center&quot;&gt;<br />
+  &lt;i class=&quot;fa fa-building text-primary mr-3 w-5&quot;&gt;&lt;/i&gt;<br />
+  &lt;span&gt;学校: 五邑大学&lt;/span&gt;<br />
+  &lt;/li&gt;<br />
+  &lt;li class=&quot;flex items-center&quot;&gt;<br />
+  &lt;i class=&quot;fa fa-user-circle-o text-primary mr-3 w-5&quot;&gt;&lt;/i&gt;<br />
+  &lt;span&gt;学号: 3124000245&lt;/span&gt;<br />
+  &lt;/li&gt;<br />
+  &lt;li class=&quot;flex items-center&quot;&gt;<br />
+  &lt;i class=&quot;fa fa-users text-primary mr-3 w-5&quot;&gt;&lt;/i&gt;<br />
+  &lt;span&gt;班级: 240931&lt;/span&gt;<br />
+  &lt;/li&gt;<br />
+  &lt;li class=&quot;flex items-center&quot;&gt;<br />
+  &lt;i class=&quot;fa fa-calendar text-primary mr-3 w-5&quot;&gt;&lt;/i&gt;<br />
+  &lt;span&gt;年级: 大三&lt;/span&gt;<br />
+  &lt;/li&gt;<br />
+  &lt;/ul&gt;<br />
+  &lt;/div&gt;<br />
+  &lt;div class=&quot;bg-gray-50 p-8 rounded-xl shadow-md hover-scale&quot;&gt;<br />
+  &lt;div class=&quot;w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-6 mx-auto&quot;&gt;<br />
+  &lt;i class=&quot;fa fa-star text-2xl text-primary&quot;&gt;&lt;/i&gt;<br />
+  &lt;/div&gt;<br />
+  &lt;h3 class=&quot;text-xl font-bold text-center mb-4&quot;&gt;个人简介&lt;/h3&gt;<br />
+  &lt;p class=&quot;text-gray-700 leading-relaxed&quot;&gt;<br />
+  我是五邑大学通信工程专业的一名大三学生。我对通信技术有着浓厚的兴趣，特别是在5G和物联网领域。我喜欢通过摄影记录生活中的美好瞬间，也热爱骑行探索城市的每个角落。此外，我还热衷于电子竞技和游泳，这些爱好让我在紧张的学习之余能够保持身心健康。<br />
+  &lt;/p&gt;<br />
+  &lt;/div&gt;<br />
+  &lt;/div&gt;<br />
+  &lt;/div&gt;<br />
+  &lt;/section&gt;</p>
+<p> &lt;!-- 教育背景 --&gt;<br />
+  &lt;section id=&quot;education&quot; class=&quot;py-16 bg-gray-50&quot;&gt;<br />
+  &lt;div class=&quot;container mx-auto px-4 sm:px-6 lg:px-8&quot;&gt;<br />
+  &lt;div class=&quot;text-center mb-12&quot;&gt;<br />
+  &lt;h2 class=&quot;text-[clamp(1.75rem,4vw,2.5rem)] font-bold text-dark mb-4&quot;&gt;教育背景&lt;/h2&gt;<br />
+  &lt;div class=&quot;w-20 h-1 bg-primary mx-auto rounded-full&quot;&gt;&lt;/div&gt;<br />
+  &lt;/div&gt;<br />
+  &lt;div class=&quot;relative&quot;&gt;<br />
+  &lt;!-- 时间线 --&gt;<br />
+  &lt;div class=&quot;absolute left-0 md:left-1/2 top-0 bottom-0 w-1 bg-primary/30 transform md:-translate-x-1/2&quot;&gt;&lt;/div&gt;<br />
+  <br />
+  &lt;!-- 教育经历1 --&gt;<br />
+  &lt;div class=&quot;relative mb-12&quot;&gt;<br />
+  &lt;div class=&quot;flex flex-col md:flex-row items-center&quot;&gt;<br />
+  &lt;div class=&quot;md:w-1/2 md:pr-12 md:text-right order-2 md:order-1 mt-4 md:mt-0&quot;&gt;<br />
+  &lt;div class=&quot;bg-white p-6 rounded-xl shadow-md hover-scale&quot;&gt;<br />
+  &lt;h3 class=&quot;text-xl font-bold text-dark mb-2&quot;&gt;五邑大学&lt;/h3&gt;<br />
+  &lt;p class=&quot;text-primary font-medium mb-2&quot;&gt;通信工程 | 本科&lt;/p&gt;<br />
+  &lt;p class=&quot;text-gray-600 mb-3&quot;&gt;2023年9月 - 至今&lt;/p&gt;<br />
+  &lt;p class=&quot;text-gray-700&quot;&gt;<br />
+  主要学习课程包括：信号与系统、通信原理、数字信号处理、电磁场与电磁波、微波技术与天线、移动通信、光纤通信等。目前GPA: 3.8/4.0，专业排名前10%。<br />
+  &lt;/p&gt;<br />
+  &lt;/div&gt;<br />
+  &lt;/div&gt;<br />
+  &lt;div class=&quot;z-10 order-1 md:order-2 flex justify-center&quot;&gt;<br />
+  &lt;div class=&quot;w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center shadow-lg&quot;&gt;<br />
+  &lt;i class=&quot;fa fa-graduation-cap&quot;&gt;&lt;/i&gt;<br />
+  &lt;/div&gt;<br />
+  &lt;/div&gt;<br />
+  &lt;div class=&quot;md:w-1/2 md:pl-12 order-3 hidden md:block&quot;&gt;&lt;/div&gt;<br />
+  &lt;/div&gt;<br />
+  &lt;/div&gt;<br />
+  <br />
+  &lt;!-- 教育经历2 --&gt;<br />
+  &lt;div class=&quot;relative mb-12&quot;&gt;<br />
+  &lt;div class=&quot;flex flex-col md:flex-row items-center&quot;&gt;<br />
+  &lt;div class=&quot;md:w-1/2 md:pr-12 order-2 md:order-1 hidden md:block&quot;&gt;&lt;/div&gt;<br />
+  &lt;div class=&quot;z-10 order-1 md:order-2 flex justify-center&quot;&gt;<br />
+  &lt;div class=&quot;w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center shadow-lg&quot;&gt;<br />
+  &lt;i class=&quot;fa fa-book&quot;&gt;&lt;/i&gt;<br />
+  &lt;/div&gt;<br />
+  &lt;/div&gt;<br />
+  &lt;div class=&quot;md:w-1/2 md:pl-12 order-3 mt-4 md:mt-0&quot;&gt;<br />
+  &lt;div class=&quot;bg-white p-6 rounded-xl shadow-md hover-scale&quot;&gt;<br />
+  &lt;h3 class=&quot;text-xl font-bold text-dark mb-2&quot;&gt;深圳高级中学&lt;/h3&gt;<br />
+  &lt;p class=&quot;text-primary font-medium mb-2&quot;&gt;理科 | 高中&lt;/p&gt;<br />
+  &lt;p class=&quot;text-gray-600 mb-3&quot;&gt;2020年9月 - 2023年6月&lt;/p&gt;<br />
+  &lt;p class=&quot;text-gray-700&quot;&gt;<br />
+  高中期间积极参与学校的科技创新社团和数学竞赛，曾获得全国中学生物理竞赛省级二等奖，全国中学生数学竞赛市级一等奖。<br />
+  &lt;/p&gt;<br />
+  &lt;/div&gt;<br />
+  &lt;/div&gt;<br />
+  &lt;/div&gt;<br />
+  &lt;/div&gt;<br />
+  &lt;/div&gt;<br />
+  &lt;/div&gt;<br />
+  &lt;/section&gt;</p>
+<p> &lt;!-- 兴趣爱好 --&gt;<br />
+  &lt;section id=&quot;hobbies&quot; class=&quot;py-16 bg-white&quot;&gt;<br />
+  &lt;div class=&quot;container mx-auto px-4 sm:px-6 lg:px-8&quot;&gt;<br />
+  &lt;div class=&quot;text-center mb-12&quot;&gt;<br />
+  &lt;h2 class=&quot;text-[clamp(1.75rem,4vw,2.5rem)] font-bold text-dark mb-4&quot;&gt;兴趣爱好&lt;/h2&gt;<br />
+  &lt;div class=&quot;w-20 h-1 bg-primary mx-auto rounded-full&quot;&gt;&lt;/div&gt;<br />
+  &lt;/div&gt;<br />
+  &lt;div class=&quot;grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8&quot;&gt;<br />
+  &lt;!-- 爱好1 --&gt;<br />
+  &lt;div class=&quot;bg-gray-50 rounded-xl overflow-hidden shadow-md hover-scale&quot;&gt;<br />
+  &lt;div class=&quot;h-48 overflow-hidden&quot;&gt;<br />
+  &lt;img src=&quot;https://picsum.photos/seed/photography/600/400&quot; alt=&quot;摄影爱好&quot; class=&quot;w-full h-full object-cover transition-transform duration-500 hover:scale-110&quot;&gt;<br />
+  &lt;/div&gt;<br />
+  &lt;div class=&quot;p-6&quot;&gt;<br />
+  &lt;div class=&quot;w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-4&quot;&gt;<br />
+  &lt;i class=&quot;fa fa-camera text-xl text-primary&quot;&gt;&lt;/i&gt;<br />
+  &lt;/div&gt;<br />
+  &lt;h3 class=&quot;text-xl font-bold text-dark mb-3&quot;&gt;摄影&lt;/h3&gt;<br />
+  &lt;p class=&quot;text-gray-700&quot;&gt;<br />
+  我喜欢用相机记录生活中的美好瞬间，特别热衷于自然风光和人文摄影。摄影让我学会观察和发现生活中的美。<br />
+  &lt;/p&gt;<br />
+  &lt;/div&gt;<br />
+  &lt;/div&gt;<br />
+  <br />
+  &lt;!-- 爱好2 --&gt;<br />
+  &lt;div class=&quot;bg-gray-50 rounded-xl overflow-hidden shadow-md hover-scale&quot;&gt;<br />
+  &lt;div class=&quot;h-48 overflow-hidden&quot;&gt;<br />
+  &lt;img src=&quot;https://picsum.photos/seed/cycling/600/400&quot; alt=&quot;骑行爱好&quot; class=&quot;w-full h-full object-cover transition-transform duration-500 hover:scale-110&quot;&gt;<br />
+  &lt;/div&gt;<br />
+  &lt;div class=&quot;p-6&quot;&gt;<br />
+  &lt;div class=&quot;w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-4&quot;&gt;<br />
+  &lt;i class=&quot;fa fa-bicycle text-xl text-primary&quot;&gt;&lt;/i&gt;<br />
+  &lt;/div&gt;<br />
+  &lt;h3 class=&quot;text-xl font-bold text-dark mb-3&quot;&gt;骑行&lt;/h3&gt;<br />
+  &lt;p class=&quot;text-gray-700&quot;&gt;<br />
+  骑行是我探索城市和大自然的方式，周末我经常会骑行到郊外，享受风和自由，感受不同的风景和文化。<br />
+  &lt;/p&gt;<br />
+  &lt;/div&gt;<br />
+  &lt;/div&gt;<br />
+  <br />
+  &lt;!-- 爱好3 --&gt;<br />
+  &lt;div class=&quot;bg-gray-50 rounded-xl overflow-hidden shadow-md hover-scale&quot;&gt;<br />
+  &lt;div class=&quot;h-48 overflow-hidden&quot;&gt;<br />
+  &lt;img src=&quot;https://picsum.photos/seed/esports/600/400&quot; alt=&quot;电竞爱好&quot; class=&quot;w-full h-full object-cover transition-transform duration-500 hover:scale-110&quot;&gt;<br />
+  &lt;/div&gt;<br />
+  &lt;div class=&quot;p-6&quot;&gt;<br />
+  &lt;div class=&quot;w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-4&quot;&gt;<br />
+  &lt;i class=&quot;fa fa-gamepad text-xl text-primary&quot;&gt;&lt;/i&gt;<br />
+  &lt;/div&gt;<br />
+  &lt;h3 class=&quot;text-xl font-bold text-dark mb-3&quot;&gt;电竞&lt;/h3&gt;<br />
+  &lt;p class=&quot;text-gray-700&quot;&gt;<br />
+  电子竞技是我放松和社交的方式，我喜欢团队合作的MOBA游戏，通过游戏结交了许多志同道合的朋友。<br />
+  &lt;/p&gt;<br />
+  &lt;/div&gt;<br />
+  &lt;/div&gt;<br />
+  <br />
+  &lt;!-- 爱好4 --&gt;<br />
+  &lt;div class=&quot;bg-gray-50 rounded-xl overflow-hidden shadow-md hover-scale&quot;&gt;<br />
+  &lt;div class=&quot;h-48 overflow-hidden&quot;&gt;<br />
+  &lt;img src=&quot;https://picsum.photos/seed/swimming/600/400&quot; alt=&quot;游泳爱好&quot; class=&quot;w-full h-full object-cover transition-transform duration-500 hover:scale-110&quot;&gt;<br />
+  &lt;/div&gt;<br />
+  &lt;div class=&quot;p-6&quot;&gt;<br />
+  &lt;div class=&quot;w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-4&quot;&gt;<br />
+  &lt;i class=&quot;fa fa-tint text-xl text-primary&quot;&gt;&lt;/i&gt;<br />
+  &lt;/div&gt;<br />
+  &lt;h3 class=&quot;text-xl font-bold text-dark mb-3&quot;&gt;游泳&lt;/h3&gt;<br />
+  &lt;p class=&quot;text-gray-700&quot;&gt;<br />
+  游泳是我最喜欢的运动之一，每周我都会坚持游泳锻炼，不仅能保持身体健康，还能缓解学习压力。<br />
+  &lt;/p&gt;<br />
+  &lt;/div&gt;<br />
+  &lt;/div&gt;<br />
+  &lt;/div&gt;<br />
+  &lt;/div&gt;<br />
+  &lt;/section&gt;</p>
+<p> &lt;!-- 联系我 --&gt;<br />
+  &lt;section id=&quot;contact&quot; class=&quot;py-16 bg-gray-50&quot;&gt;<br />
+  &lt;div class=&quot;container mx-auto px-4 sm:px-6 lg:px-8&quot;&gt;<br />
+  &lt;div class=&quot;text-center mb-12&quot;&gt;<br />
+  &lt;h2 class=&quot;text-[clamp(1.75rem,4vw,2.5rem)] font-bold text-dark mb-4&quot;&gt;联系方式&lt;/h2&gt;<br />
+  &lt;div class=&quot;w-20 h-1 bg-primary mx-auto rounded-full&quot;&gt;&lt;/div&gt;<br />
+  &lt;/div&gt;<br />
+  &lt;div class=&quot;max-w-4xl mx-auto&quot;&gt;<br />
+  &lt;div class=&quot;bg-white rounded-2xl shadow-xl overflow-hidden&quot;&gt;<br />
+  &lt;div class=&quot;grid grid-cols-1 md:grid-cols-2&quot;&gt;<br />
+  &lt;div class=&quot;bg-primary p-8 md:p-12 text-white&quot;&gt;<br />
+  &lt;h3 class=&quot;text-2xl font-bold mb-6&quot;&gt;联系我&lt;/h3&gt;<br />
+  &lt;p class=&quot;mb-8 text-gray-100&quot;&gt;<br />
+  如果你对我的个人情况或项目感兴趣，欢迎通过以下方式联系我。<br />
+  &lt;/p&gt;<br />
+  &lt;ul class=&quot;space-y-4&quot;&gt;<br />
+  &lt;li class=&quot;flex items-center&quot;&gt;<br />
+  &lt;div class=&quot;w-10 h-10 rounded-full bg-white/20 flex items-center justify-center mr-4&quot;&gt;<br />
+  &lt;i class=&quot;fa fa-envelope-o&quot;&gt;&lt;/i&gt;<br />
+  &lt;/div&gt;<br />
+  &lt;span&gt;gaozj@example.com&lt;/span&gt;<br />
+  &lt;/li&gt;<br />
+  &lt;li class=&quot;flex items-center&quot;&gt;<br />
+  &lt;div class=&quot;w-10 h-10 rounded-full bg-white/20 flex items-center justify-center mr-4&quot;&gt;<br />
+  &lt;i class=&quot;fa fa-phone&quot;&gt;&lt;/i&gt;<br />
+  &lt;/div&gt;<br />
+  &lt;span&gt;135 **** 6789&lt;/span&gt;<br />
+  &lt;/li&gt;<br />
+  &lt;li class=&quot;flex items-center&quot;&gt;<br />
+  &lt;div class=&quot;w-10 h-10 rounded-full bg-white/20 flex items-center justify-center mr-4&quot;&gt;<br />
+  &lt;i class=&quot;fa fa-weixin&quot;&gt;&lt;/i&gt;<br />
+  &lt;/div&gt;<br />
+  &lt;span&gt;gaozj_2024&lt;/span&gt;<br />
+  &lt;/li&gt;<br />
+  &lt;li class=&quot;flex items-center&quot;&gt;<br />
+  &lt;div class=&quot;w-10 h-10 rounded-full bg-white/20 flex items-center justify-center mr-4&quot;&gt;<br />
+  &lt;i class=&quot;fa fa-map-marker&quot;&gt;&lt;/i&gt;<br />
+  &lt;/div&gt;<br />
+  &lt;span&gt;广东省江门市五邑大学&lt;/span&gt;<br />
+  &lt;/li&gt;<br />
+  &lt;/ul&gt;<br />
+  &lt;div class=&quot;mt-10&quot;&gt;<br />
+  &lt;h4 class=&quot;text-lg font-semibold mb-4&quot;&gt;关注我&lt;/h4&gt;<br />
+  &lt;div class=&quot;flex space-x-4&quot;&gt;<br />
+  &lt;a href=&quot;#&quot; class=&quot;w-10 h-10 rounded-full bg-white/20 flex items-center justify-center hover:bg-white/30 transition-colors&quot;&gt;<br />
+  &lt;i class=&quot;fa fa-weibo&quot;&gt;&lt;/i&gt;<br />
+  &lt;/a&gt;<br />
+  &lt;a href=&quot;#&quot; class=&quot;w-10 h-10 rounded-full bg-white/20 flex items-center justify-center hover:bg-white/30 transition-colors&quot;&gt;<br />
+  &lt;i class=&quot;fa fa-weixin&quot;&gt;&lt;/i&gt;<br />
+  &lt;/a&gt;<br />
+  &lt;a href=&quot;#&quot; class=&quot;w-10 h-10 rounded-full bg-white/20 flex items-center justify-center hover:bg-white/30 transition-colors&quot;&gt;<br />
+  &lt;i class=&quot;fa fa-github&quot;&gt;&lt;/i&gt;<br />
+  &lt;/a&gt;<br />
+  &lt;a href=&quot;#&quot; class=&quot;w-10 h-10 rounded-full bg-white/20 flex items-center justify-center hover:bg-white/30 transition-colors&quot;&gt;<br />
+  &lt;i class=&quot;fa fa-linkedin&quot;&gt;&lt;/i&gt;<br />
+  &lt;/a&gt;<br />
+  &lt;/div&gt;<br />
+  &lt;/div&gt;<br />
+  &lt;/div&gt;<br />
+  &lt;div class=&quot;p-8 md:p-12&quot;&gt;<br />
+  &lt;h3 class=&quot;text-2xl font-bold text-dark mb-6&quot;&gt;留言&lt;/h3&gt;<br />
+  &lt;form id=&quot;contact-form&quot; class=&quot;space-y-6&quot;&gt;<br />
+  &lt;div&gt;<br />
+  &lt;label for=&quot;name&quot; class=&quot;block text-sm font-medium text-gray-700 mb-1&quot;&gt;姓名&lt;/label&gt;<br />
+  &lt;input type=&quot;text&quot; id=&quot;name&quot; name=&quot;name&quot; placeholder=&quot;请输入您的姓名&quot; class=&quot;w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary/50 focus:border-primary outline-none transition-all&quot;&gt;<br />
+  &lt;/div&gt;<br />
+  &lt;div&gt;<br />
+  &lt;label for=&quot;email&quot; class=&quot;block text-sm font-medium text-gray-700 mb-1&quot;&gt;邮箱&lt;/label&gt;<br />
+  &lt;input type=&quot;email&quot; id=&quot;email&quot; name=&quot;email&quot; placeholder=&quot;请输入您的邮箱&quot; class=&quot;w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary/50 focus:border-primary outline-none transition-all&quot;&gt;<br />
+  &lt;/div&gt;<br />
+  &lt;div&gt;<br />
+  &lt;label for=&quot;message&quot; class=&quot;block text-sm font-medium text-gray-700 mb-1&quot;&gt;留言内容&lt;/label&gt;<br />
+  &lt;textarea id=&quot;message&quot; name=&quot;message&quot; rows=&quot;4&quot; placeholder=&quot;请输入您的留言内容...&quot; class=&quot;w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary/50 focus:border-primary outline-none transition-all resize-none&quot;&gt;&lt;/textarea&gt;<br />
+  &lt;/div&gt;<br />
+  &lt;button type=&quot;submit&quot; class=&quot;w-full bg-primary hover:bg-primary/90 text-white font-medium py-3 px-4 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-0.5 flex items-center justify-center&quot;&gt;<br />
+  &lt;i class=&quot;fa fa-paper-plane mr-2&quot;&gt;&lt;/i&gt;<br />
+  &lt;span&gt;发送留言&lt;/span&gt;<br />
+  &lt;/button&gt;<br />
+  &lt;/form&gt;<br />
+  &lt;/div&gt;<br />
+  &lt;/div&gt;<br />
+  &lt;/div&gt;<br />
+  &lt;/div&gt;<br />
+  &lt;/div&gt;<br />
+  &lt;/section&gt;<br />
+  &lt;/main&gt;</p>
+<p> &lt;!-- 页脚 --&gt;<br />
+  &lt;footer class=&quot;bg-dark text-white py-12&quot;&gt;<br />
+  &lt;div class=&quot;container mx-auto px-4 sm:px-6 lg:px-8&quot;&gt;<br />
+  &lt;div class=&quot;grid grid-cols-1 md:grid-cols-4 gap-8&quot;&gt;<br />
+  &lt;div&gt;<br />
+  &lt;h3 class=&quot;text-xl font-bold mb-4&quot;&gt;高祖俊&lt;/h3&gt;<br />
+  &lt;p class=&quot;text-gray-400&quot;&gt;<br />
+  五邑大学通信工程专业大三学生，热爱技术与生活，不断探索与成长。<br />
+  &lt;/p&gt;<br />
+  &lt;/div&gt;<br />
+  &lt;div&gt;<br />
+  &lt;h4 class=&quot;text-lg font-semibold mb-4&quot;&gt;快速链接&lt;/h4&gt;<br />
+  &lt;ul class=&quot;space-y-2&quot;&gt;<br />
+  &lt;li&gt;&lt;a href=&quot;#about&quot; class=&quot;text-gray-400 hover:text-white transition-colors&quot;&gt;关于我&lt;/a&gt;&lt;/li&gt;<br />
+  &lt;li&gt;&lt;a href=&quot;#education&quot; class=&quot;text-gray-400 hover:text-white transition-colors&quot;&gt;教育背景&lt;/a&gt;&lt;/li&gt;<br />
+  &lt;li&gt;&lt;a href=&quot;#hobbies&quot; class=&quot;text-gray-400 hover:text-white transition-colors&quot;&gt;兴趣爱好&lt;/a&gt;&lt;/li&gt;<br />
+  &lt;li&gt;&lt;a href=&quot;#contact&quot; class=&quot;text-gray-400 hover:text-white transition-colors&quot;&gt;联系方式&lt;/a&gt;&lt;/li&gt;<br />
+  &lt;/ul&gt;<br />
+  &lt;/div&gt;<br />
+  &lt;div&gt;<br />
+  &lt;h4 class=&quot;text-lg font-semibold mb-4&quot;&gt;联系我&lt;/h4&gt;<br />
+  &lt;ul class=&quot;space-y-2&quot;&gt;<br />
+  &lt;li class=&quot;flex items-center&quot;&gt;<br />
+  &lt;i class=&quot;fa fa-envelope-o text-gray-400 mr-2&quot;&gt;&lt;/i&gt;<br />
+  &lt;span class=&quot;text-gray-400&quot;&gt;gaozj@example.com&lt;/span&gt;<br />
+  &lt;/li&gt;<br />
+  &lt;li class=&quot;flex items-center&quot;&gt;<br />
+  &lt;i class=&quot;fa fa-phone text-gray-400 mr-2&quot;&gt;&lt;/i&gt;<br />
+  &lt;span class=&quot;text-gray-400&quot;&gt;135 **** 6789&lt;/span&gt;<br />
+  &lt;/li&gt;<br />
+  &lt;li class=&quot;flex items-center&quot;&gt;<br />
+  &lt;i class=&quot;fa fa-weixin text-gray-400 mr-2&quot;&gt;&lt;/i&gt;<br />
+  &lt;span class=&quot;text-gray-400&quot;&gt;gaozj_2024&lt;/span&gt;<br />
+  &lt;/li&gt;<br />
+  &lt;/ul&gt;<br />
+  &lt;/div&gt;<br />
+  &lt;div&gt;<br />
+  &lt;h4 class=&quot;text-lg font-semibold mb-4&quot;&gt;关注我&lt;/h4&gt;<br />
+  &lt;div class=&quot;flex space-x-4&quot;&gt;<br />
+  &lt;a href=&quot;#&quot; class=&quot;w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition-colors&quot;&gt;<br />
+  &lt;i class=&quot;fa fa-weibo&quot;&gt;&lt;/i&gt;<br />
+  &lt;/a&gt;<br />
+  &lt;a href=&quot;#&quot; class=&quot;w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition-colors&quot;&gt;<br />
+  &lt;i class=&quot;fa fa-weixin&quot;&gt;&lt;/i&gt;<br />
+  &lt;/a&gt;<br />
+  &lt;a href=&quot;#&quot; class=&quot;w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition-colors&quot;&gt;<br />
+  &lt;i class=&quot;fa fa-github&quot;&gt;&lt;/i&gt;<br />
+  &lt;/a&gt;<br />
+  &lt;a href=&quot;#&quot; class=&quot;w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition-colors&quot;&gt;<br />
+  &lt;i class=&quot;fa fa-linkedin&quot;&gt;&lt;/i&gt;<br />
+  &lt;/a&gt;<br />
+  &lt;/div&gt;<br />
+  &lt;/div&gt;<br />
+  &lt;/div&gt;<br />
+  &lt;div class=&quot;border-t border-gray-800 mt-10 pt-6 text-center text-gray-500&quot;&gt;<br />
+  &lt;p&gt;© 2025 高祖俊的个人网站. 保留所有权利.&lt;/p&gt;<br />
+  &lt;/div&gt;<br />
+  &lt;/div&gt;<br />
+  &lt;/footer&gt;<br />
+  &lt;/div&gt;</p>
+<p> &lt;!-- JavaScript --&gt;<br />
+  &lt;script&gt;<br />
+  // 登录表单处理<br />
+  document.addEventListener('DOMContentLoaded', function() {<br />
+  const loginForm = document.getElementById('login-form');<br />
+  const loginPage = document.getElementById('login-page');<br />
+  const mainPage = document.getElementById('main-page');<br />
+  const logoutBtn = document.getElementById('logout-btn');<br />
+  const mobileMenuBtn = document.getElementById('mobile-menu-btn');<br />
+  const mobileMenu = document.getElementById('mobile-menu');<br />
+  const contactForm = document.getElementById('contact-form');<br />
+  const navLinks = document.querySelectorAll('nav a, #mobile-menu a');<br />
+  <br />
+  // 登录验证<br />
+  loginForm.addEventListener('submit', function(e) {<br />
+  e.preventDefault();<br />
+  <br />
+  const username = document.getElementById('username').value;<br />
+  const password = document.getElementById('password').value;<br />
+  <br />
+  // 验证账号密码<br />
+  if (username === '123456' &amp;&amp; password === '123456') {<br />
+  // 显示主页面，隐藏登录页面<br />
+  loginPage.classList.add('hidden');<br />
+  mainPage.classList.remove('hidden');<br />
+  <br />
+  // 添加登录成功动画<br />
+  mainPage.classList.add('animate-fadeIn');<br />
+  <br />
+  // 滚动到顶部<br />
+  window.scrollTo({ top: 0, behavior: 'smooth' });<br />
+  <br />
+  // 显示通知<br />
+  showNotification('登录成功！欢迎回来，高祖俊。', 'success');<br />
+  } else {<br />
+  showNotification('账号或密码错误，请重试。', 'error');<br />
+  }<br />
+  });<br />
+  <br />
+  // 退出登录<br />
+  logoutBtn.addEventListener('click', function() {<br />
+  // 显示登录页面，隐藏主页面<br />
+  mainPage.classList.add('hidden');<br />
+  loginPage.classList.remove('hidden');<br />
+  <br />
+  // 重置表单<br />
+  loginForm.reset();<br />
+  <br />
+  // 显示通知<br />
+  showNotification('已成功退出登录。', 'info');<br />
+  });<br />
+  <br />
+  // 移动端菜单切换<br />
+  mobileMenuBtn.addEventListener('click', function() {<br />
+  mobileMenu.classList.toggle('hidden');<br />
+  });<br />
+  <br />
+  // 移动端菜单项点击后关闭菜单<br />
+  navLinks.forEach(link =&gt; {<br />
+  link.addEventListener('click', function() {<br />
+  if (!mobileMenu.classList.contains('hidden')) {<br />
+  mobileMenu.classList.add('hidden');<br />
+  }<br />
+  });<br />
+  });<br />
+  <br />
+  // 联系表单提交<br />
+  contactForm.addEventListener('submit', function(e) {<br />
+  e.preventDefault();<br />
+  <br />
+  // 显示通知<br />
+  showNotification('留言已发送成功，感谢您的联系！', 'success');<br />
+  <br />
+  // 重置表单<br />
+  contactForm.reset();<br />
+  });<br />
+  <br />
+  // 平滑滚动<br />
+  navLinks.forEach(link =&gt; {<br />
+  link.addEventListener('click', function(e) {<br />
+  e.preventDefault();<br />
+  <br />
+  const targetId = this.getAttribute('href');<br />
+  const targetElement = document.querySelector(targetId);<br />
+  <br />
+  if (targetElement) {<br />
+  window.scrollTo({<br />
+  top: targetElement.offsetTop - 80,<br />
+  behavior: 'smooth'<br />
+  });<br />
+  }<br />
+  });<br />
+  });<br />
+  <br />
+  // 导航栏滚动效果<br />
+  window.addEventListener('scroll', function() {<br />
+  const header = document.querySelector('header');<br />
+  <br />
+  if (window.scrollY &gt; 50) {<br />
+  header.classList.add('bg-primary/95', 'backdrop-blur-sm', 'shadow-lg');<br />
+  header.classList.remove('bg-primary');<br />
+  } else {<br />
+  header.classList.remove('bg-primary/95', 'backdrop-blur-sm', 'shadow-lg');<br />
+  header.classList.add('bg-primary');<br />
+  }<br />
+  });<br />
+  <br />
+  // 通知函数<br />
+  function showNotification(message, type = 'info') {<br />
+  // 创建通知元素<br />
+  const notification = document.createElement('div');<br />
+  notification.className = `fixed top-4 right-4 p-4 rounded-lg shadow-lg z-50 transform transition-all duration-500 translate-x-full ${<br />
+  type === 'success' ? 'bg-green-500 text-white' : <br />
+  type === 'error' ? 'bg-red-500 text-white' : <br />
+  'bg-blue-500 text-white'<br />
+  }`;<br />
+  notification.innerHTML = `<br />
+  &lt;div class=&quot;flex items-center&quot;&gt;<br />
+  &lt;i class=&quot;fa fa-${<br />
+  type === 'success' ? 'check-circle' : <br />
+  type === 'error' ? 'exclamation-circle' : <br />
+  'info-circle'<br />
+  } mr-2&quot;&gt;&lt;/i&gt;<br />
+  &lt;span&gt;${message}&lt;/span&gt;<br />
+  &lt;/div&gt;<br />
+  `;<br />
+  <br />
+  // 添加到页面<br />
+  document.body.appendChild(notification);<br />
+  <br />
+  // 显示通知<br />
+  setTimeout(() =&gt; {<br />
+  notification.classList.remove('translate-x-full');<br />
+  notification.classList.add('translate-x-0');<br />
+  }, 100);<br />
+  <br />
+  // 自动关闭<br />
+  setTimeout(() =&gt; {<br />
+  notification.classList.remove('translate-x-0');<br />
+  notification.classList.add('translate-x-full');<br />
+  <br />
+  // 移除元素<br />
+  setTimeout(() =&gt; {<br />
+  document.body.removeChild(notification);<br />
+  }, 500);<br />
+  }, 3000);<br />
+  }<br />
+  });<br />
+  &lt;/script&gt;<br />
+  &lt;/body&gt;<br />
+  &lt;/html&gt;<br />
+</p>
+</body>
+</html>
